@@ -12,11 +12,11 @@ import { user } from '../models/user.modeles';
 export class SingupComponent implements OnInit {
 
   registrationForm: FormGroup;
-    user = new user('','',0,'',[]);
+    user = new user('','','',0,[]);
     isRegistered = false;
     submitted = false;
     errorMessage = '';
-    rolemembre = ['membre']
+    rolemembre = ['MODERATEUR']
     roles: any = [
         {name:'Membre', id:1, selected: true},
         {name:'Moderator', id:2, selected: false},
@@ -61,20 +61,5 @@ export class SingupComponent implements OnInit {
         });
     }
 
-    getSelectedRoles():string[]  {
-        this.selectedRoles = this.registrationForm.value.roleSelection.map((selected, i) => {
-          if(selected){
-            return this.roles[i].name;
-          }else {
-            return '';
-          }
-        });
-        // return selected roles
-        return this.selectedRoles.filter(function (element) {
-          if (element !== '') {
-            return element;
-          }
-        });
-      }
 
 }

@@ -23,12 +23,7 @@
         <div class="row flex-grow">
           <div class="col-lg-6 d-flex align-items-center justify-content-center">
             <div class="auth-form-transparent text-left p-3">
-              <div class="brand-logo">
-                <img src="/assets/images/logo.png" alt="logo">
-              </div>
-              <h4>New here?</h4>
-              <h6 class="font-weight-light">Join us today! It takes only few steps</h6>
-              <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="pt-3" >
+              <form (ngSubmit)="onSubmit()" class="pt-3" >
                 <div class="form-group">
                   <label>Username</label>
                   <div class="input-group">
@@ -37,20 +32,8 @@
                         <i class="mdi mdi-account-outline text-primary"></i>
                       </span>
                     </div>
-                    <input type="text" class="form-control form-control-lg border-left-0" placeholder="Username" id="userName"
-                    formControlName="userName">
-                    <div class="alert alert-danger" *ngIf="registrationForm.get('userName').invalid
-            && registrationForm.get('userName').touched">
-            <div *ngIf="registrationForm.get('userName').errors.required">
-              User name is required
-            </div>
-            <div *ngIf="registrationForm.get('userName').errors.minlength">
-              User name must be at least 5 characters long
-            </div>
-            <div *ngIf="registrationForm.get('userName').errors.maxlength">
-              User name should not be more than 20 characters long
-            </div>
-          </div>
+                    <input type="text" class="form-control form-control-lg border-left-0" placeholder="Username" id="userName" name="userName"
+                    [(ngModel)]="user.userName">
                   </div>
                 </div>
                 <div class="form-group">
@@ -61,12 +44,8 @@
                         <i class="mdi mdi-email-outline text-primary"></i>
                       </span>
                     </div>
-                    <input type="email" class="form-control form-control-lg border-left-0" placeholder="Email" id="email"
-                    formControlName="email">
-                    <div class="alert alert-danger" *ngIf="registrationForm.get('email').invalid
-              && registrationForm.get('email').touched">
-            Please enter a valid email
-          </div>
+                    <input type="email" class="form-control form-control-lg border-left-0" placeholder="Email" id="email" name="email"
+                    [(ngModel)]="user.email">
                   </div>
                 </div>
                 <div class="form-group">
@@ -77,18 +56,18 @@
                         <i class="mdi mdi-cellphone-iphone text-primary"></i>
                       </span>
                     </div>
-                    <input type="Telephone" class="form-control form-control-lg border-left-0" id="exampleInputPassword" placeholder="Telephone" id="telephone"
-                    formControlName="telephone">
-                    <div class="alert alert-danger" *ngIf="registrationForm.get('telephone').invalid
-            && registrationForm.get('telephone').touched">
-            <div *ngIf="registrationForm.get('telephone').errors.required">
-              telephone number is required
-            </div>
-            <div *ngIf="registrationForm.get('telephone').errors.minlength">
-              telephone number must be at least 8 numbers long
-            </div>
-          </div>
+                    <input type="Telephone" class="form-control form-control-lg border-left-0" id="exampleInputPassword" placeholder="Telephone" id="telephone" name=telephone
+                    [(ngModel)]="user.telephone">
+                   </div>
                   </div>
+
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Roles</label>
+                  <select    (change)="selectChangeHandler($event)" class="form-control form-control-lg" id="exampleFormControlSelect1">
+                    <option value="ROLE_ADMIN">ADMIN</option>
+                    <option value="ROLE_MODERATEUR">MODERATEUR</option>
+                    <option value="ROLE_MEMBRE">MEMBRE</option>
+                  </select>
                 </div>
                 <div class="form-group">
                   <label>Password</label>
@@ -98,35 +77,25 @@
                         <i class="mdi mdi-lock-outline text-primary"></i>
                       </span>
                     </div>
-                    <input type="password" class="form-control form-control-lg border-left-0" id="exampleInputPassword" placeholder="Password" id="password"
-                    formControlName="password">
-                    <div class="alert alert-danger" *ngIf="registrationForm.get('password').invalid
-            && registrationForm.get('password').touched">
-            <div *ngIf="registrationForm.get('password').errors.required">
-              Password is required
-            </div>
-            <div *ngIf="registrationForm.get('password').errors.minlength">
-              Password must be at least 8 characters long
-            </div>
+                    <input type="password" class="form-control form-control-lg border-left-0" id="exampleInputPassword" placeholder="Password" id="password" name=password
+                    [(ngModel)]="user.password">
+
           </div>
-                  </div>
-                </div>
+        </div>
+
+
 
                 <div class="form-group">
                 </div>
                 <div class="mt-3">
-                  <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit" [disabled]="registrationForm.invalid" href="../../index.html">SIGN UP</button>
+                  <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit"  href="../../index.html">Update user</button>
                 </div>
                 <div class="text-center mt-4 font-weight-light">
                   Already have an account? <a href="login.html" class="text-primary">Login</a>
                 </div>
-                <div class="alert alert-warning" *ngIf="submitted && !isRegistered">
-                  Signup failed- {{ errorMessage }}
-                </div>
+
               </form>
-              <div class="alert alert-success" *ngIf="isRegistered">
-                Your registration is successful!
-              </div>
+
             </div>
           </div>
           <div class="col-lg-6 register-half-bg d-none d-lg-flex flex-row">
@@ -151,3 +120,5 @@
   <!-- endinject -->
 </body>
 </html>
+
+

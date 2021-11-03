@@ -1,0 +1,21 @@
+<h2>Sponsor Details</h2>
+
+<hr/>
+<div *ngIf="sponsor">
+  <div>
+    <label><b>Libelle: </b></label> {{sponsor.Libelle}}
+  </div>
+  <div>
+    <label><b>Budget: </b></label> {{sponsor.budget}}}
+  </div>
+  <div>
+    <label><b>Club: </b></label> {{sponsor.idclubs}}
+  </div>
+  <div>
+    <label><b>Club: </b></label> {{sponsor.iduser}}
+  </div>
+</div>
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Sponsor List</button><br>
+
