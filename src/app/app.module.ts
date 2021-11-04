@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { SinginComponent } from './singin/singin.component';
 import { SingupComponent } from './singup/singup.component';
 import { LeftNavComponent } from './left-nav/left-nav.component';
-import { DashbordComponent } from './dashbord/dashbord.component';
 import { SponsorAjoutComponent } from './sponsor-ajout/sponsor-ajout.component';
 import { SponsordetailsComponent } from './sponsordetails/sponsordetails.component';
 import { SponsorupdateComponent } from './sponsorupdate/sponsorupdate.component';
@@ -24,7 +23,6 @@ import { DetailsuserComponent } from './detailsuser/detailsuser.component';
     SinginComponent,
     SingupComponent,
     LeftNavComponent,
-    DashbordComponent,
     SponsorAjoutComponent,
     SponsorListComponent,
     SponsordetailsComponent,
