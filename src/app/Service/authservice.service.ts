@@ -39,7 +39,7 @@ export class AuthserviceService {
 
   logout(){
     sessionStorage.clear()
-    this.router.navigate(['/login']);
+    this.router.navigate(['/singin']);
   }
 
   isLoggedIn(): boolean{
