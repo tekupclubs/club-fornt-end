@@ -17,6 +17,10 @@ import { AjoutuserComponent } from './ajoutuser/ajoutuser.component';
 import { DeleteuserComponent } from './deleteuser/deleteuser.component';
 import { UpdateuserComponent } from './updateuser/updateuser.component';
 import { DetailsuserComponent } from './detailsuser/detailsuser.component';
+import { EvenementAjoutComponent } from './evenement-ajout/evenement-ajout.component';
+import { EvenementListComponent } from './evenement-list/evenement-list.component';
+import { EvenementdetailsComponent } from './evenementdetails/evenementdetails.component';
+import { EvenementupdateComponent } from './evenementupdate/evenementupdate.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,11 @@ import { DetailsuserComponent } from './detailsuser/detailsuser.component';
     AjoutuserComponent,
     DeleteuserComponent,
     UpdateuserComponent,
-    DetailsuserComponent
+    DetailsuserComponent,
+    EvenementAjoutComponent,
+    EvenementListComponent,
+    EvenementdetailsComponent,
+    EvenementupdateComponent
   ],
   imports: [
     BrowserModule,

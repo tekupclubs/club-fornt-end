@@ -11,6 +11,10 @@ import { DashbordComponent } from './dashbord/dashbord.component';
 import { SponsordetailsComponent } from './sponsordetails/sponsordetails.component';
 import { ListeuserComponent } from './listeuser/listeuser.component';
 import { UpdateuserComponent } from './updateuser/updateuser.component';
+import { EvenementAjoutComponent } from './evenement-ajout/evenement-ajout.component';
+import { EvenementListComponent } from './evenement-list/evenement-list.component';
+import { EvenementupdateComponent } from './evenementupdate/evenementupdate.component';
+import { EvenementdetailsComponent } from './evenementdetails/evenementdetails.component';
 
 const routes: Routes = [
   {path:'signup',component:SingupComponent},
@@ -24,6 +28,10 @@ const routes: Routes = [
   {path:'listuser',component:ListeuserComponent},
   {path:'updateuser',component:UpdateuserComponent},
   {path:'userdetails',component:DetailsuserComponent},
+  {path:'addevenement',component:EvenementAjoutComponent},
+  {path:'listevenement',component:EvenementListComponent},
+  {path:'updatesevenement',component:EvenementupdateComponent},
+  {path:'evenementdetails',component:EvenementdetailsComponent},
 
 
 
