@@ -15,6 +15,10 @@ import { EvenementAjoutComponent } from './evenement-ajout/evenement-ajout.compo
 import { EvenementListComponent } from './evenement-list/evenement-list.component';
 import { EvenementupdateComponent } from './evenementupdate/evenementupdate.component';
 import { EvenementdetailsComponent } from './evenementdetails/evenementdetails.component';
+import { ModeratorComponent } from './moderator/moderator.component';
+import { ModeratorClubComponent } from './moderator-club/moderator-club.component';
+import { ModeratorprofileComponent } from './moderatorprofile/moderatorprofile.component';
+import { CreateclubComponent } from './createclub/createclub.component';
 
 const routes: Routes = [
   {path:'signup',component:SingupComponent},
@@ -32,7 +36,10 @@ const routes: Routes = [
   {path:'listevenement',component:EvenementListComponent},
   {path:'updatesevenement',component:EvenementupdateComponent},
   {path:'evenementdetails',component:EvenementdetailsComponent},
-
+  {path:'moderator',component:ModeratorComponent},
+  {path:'moderator-club',component:ModeratorClubComponent},
+  {path:'moderatorprofile',component:ModeratorprofileComponent},
+  {path:'createclub',component:CreateclubComponent},
 
 
 
