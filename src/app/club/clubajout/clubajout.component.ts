@@ -20,7 +20,9 @@ iduser:string = null;
 noimageurl="/assets/images/noimage.png"
   ngOnInit(): void {
 this.clubservice.getclubs().subscribe(
-  res=>{this.Clubs = res.oblist}
+  res=>{this.Clubs = res.oblist  }
+
+
 );
 this.iduser = this.route.snapshot.paramMap.get('id');
 }
@@ -33,9 +35,7 @@ this.iduser = this.route.snapshot.paramMap.get('id');
     reader.readAsDataURL(this.fileToUpload);
   }
 addclub(libelle:any,Activite:any,email:any,clubimage:any){
-
 this.clubservice.addclub(libelle.value,Activite.value,email.value,this.iduser,this.fileToUpload).subscribe(res=>{
-this.Clubs= res.oblist;
 
 });
 }
