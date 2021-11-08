@@ -36,11 +36,6 @@ const routes: Routes = [
   {path:'moderator-club',component:ModeratorClubComponent},
   {path:'moderatorprofile',component:ModeratorprofileComponent},
   {path:'createclub',component:CreateclubComponent},
-
-
-
-
-
 ];
 
 @NgModule({
