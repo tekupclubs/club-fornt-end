@@ -1,0 +1,75 @@
+<div class="container">
+  <br />
+  <form
+    class="form-horizontal shadow p-3 mb-5 bg-white rounded"
+    #f="ngForm"
+    (ngSubmit)="
+      f.form.valid &&
+        updateclub(libelle,Activite,email,clubimage)">
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="libelle"
+            #libelle
+            [(ngModel)]="club.libelle"
+            name="libelle"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="club Activites"
+            #Activite
+            [(ngModel)]="club.Activite"
+            name="Activite"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder=" email "
+            #email
+            [(ngModel)]="club.email"
+            name="email"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="file"
+            class="form-control"
+            placeholder="image of the club "
+            #clubimage
+            accept="image/*"
+            name="clubimage"
+            (change)="handleFileInput($any($event).target.files)"
+          />
+        </div>
+      </div>
+      <div class="col-3">
+        <p><b>Original Image</b></p>
+        <img
+          src="data:image/png;base64,{{ club.clubimage }}"
+          style="width: 70%; height: 60%"
+        />
+      </div>
+      <div class="col-3">
+        <p><b>New Image</b></p>
+        <img [src]="noimageurl" style="width: 250px; height: 200px" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <input
+          type="submit"
+          class="btn btn-secondary"
+          value="Update Evenment"
+        />
+      </div>
+    </div>
+  </form>
+</div>

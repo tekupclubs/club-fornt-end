@@ -1,3 +1,5 @@
+import { ClubupdateComponent } from './club/clubupdate/clubupdate.component';
+import { ClubajoutComponent } from './club/clubajout/clubajout.component';
 import { LeftNavComponent } from './left-nav/left-nav.component';
 import { DetailsuserComponent } from './detailsuser/detailsuser.component';
 import { AjoutuserComponent } from './ajoutuser/ajoutuser.component';
@@ -15,31 +17,29 @@ import { EvenementAjoutComponent } from './evenement-ajout/evenement-ajout.compo
 import { EvenementListComponent } from './evenement-list/evenement-list.component';
 import { EvenementupdateComponent } from './evenementupdate/evenementupdate.component';
 import { EvenementdetailsComponent } from './evenementdetails/evenementdetails.component';
-import { ModeratorComponent } from './moderator/moderator.component';
-import { ModeratorClubComponent } from './moderator-club/moderator-club.component';
-import { ModeratorprofileComponent } from './moderatorprofile/moderatorprofile.component';
-import { CreateclubComponent } from './createclub/createclub.component';
+import { ImgNavigationComponent } from './img-navigation/img-navigation.component';
 
 const routes: Routes = [
   {path:'signup',component:SingupComponent},
   {path:'singin',component:SinginComponent},
-  {path:'dashbord',component:LeftNavComponent},
+  {path:'dashbord',component:LeftNavComponent,children :[
+  {path:"navimg",component:ImgNavigationComponent},
+  {path:'listuser',component:ListeuserComponent},
+  {path:'adduser',component:AjoutuserComponent},
+  {path:'updateuser/:id',component:UpdateuserComponent},
+  {path:'userdetails/:id',component:DetailsuserComponent},
+  {path:'clubajout/:id',component:ClubajoutComponent},
+  {path:'updateclub',component:ClubupdateComponent}]},
   {path:'addsponsor',component:SponsorAjoutComponent},
   {path:'listsponsor',component:SponsorListComponent},
   {path:'updatesponsor',component:SponsorupdateComponent},
   {path:'sponsordetails',component:SponsordetailsComponent},
-  {path:'addevenement',component:EvenementAjoutComponent},
-  {path:'listevenement',component:EvenementListComponent},
-  {path:'updatesevenement',component:EvenementupdateComponent},
-  {path:'evenementdetails',component:EvenementdetailsComponent},
-  {path:'moderator',component:ModeratorComponent},
-  {path:'moderator-club',component:ModeratorClubComponent},
-  {path:'moderatorprofile',component:ModeratorprofileComponent},
-  {path:'createclub',component:CreateclubComponent},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{
+    anchorScrolling: 'enabled',
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

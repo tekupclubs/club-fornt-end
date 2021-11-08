@@ -16,15 +16,6 @@ import { AjoutuserComponent } from './ajoutuser/ajoutuser.component';
 import { DeleteuserComponent } from './deleteuser/deleteuser.component';
 import { UpdateuserComponent } from './updateuser/updateuser.component';
 import { DetailsuserComponent } from './detailsuser/detailsuser.component';
-import { EvenementAjoutComponent } from './evenement-ajout/evenement-ajout.component';
-import { EvenementListComponent } from './evenement-list/evenement-list.component';
-import { EvenementdetailsComponent } from './evenementdetails/evenementdetails.component';
-import { EvenementupdateComponent } from './evenementupdate/evenementupdate.component';
-import { ModeratorComponent } from './moderator/moderator.component';
-import { ModeratorprofileComponent } from './moderatorprofile/moderatorprofile.component';
-import { ModeratorClubComponent } from './moderator-club/moderator-club.component';
-import { CreateclubComponent } from './createclub/createclub.component';
-import { CreatemembreComponent } from './createmembre/createmembre.component';
 
 @NgModule({
   declarations: [
@@ -41,15 +32,7 @@ import { CreatemembreComponent } from './createmembre/createmembre.component';
     DeleteuserComponent,
     UpdateuserComponent,
     DetailsuserComponent,
-    EvenementAjoutComponent,
-    EvenementListComponent,
-    EvenementdetailsComponent,
-    EvenementupdateComponent,
-    ModeratorComponent,
-    ModeratorprofileComponent,
-    ModeratorClubComponent,
-    CreateclubComponent,
-    CreatemembreComponent
+
   ],
   imports: [
     BrowserModule,

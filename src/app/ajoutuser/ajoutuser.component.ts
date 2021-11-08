@@ -1,6 +1,6 @@
 import { UserserviceService } from './../Service/userservice.service';
 import { user } from './../models/user.modeles';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl,FormArray, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -14,20 +14,41 @@ export class AjoutuserComponent implements OnInit {
   isRegistered = false;
   submitted = false;
   errorMessage = '';
-  Roles = [''] ;
-  constructor(private userservice:UserserviceService) { }
-  selectChangeHandler (event: any) {
-    this.Roles = event.target.value;
-  }
+  rolemembre = ['Admin']
+  roles: any = [
+    {name:'Admin', id:1, selected: true},
+    {name:'MODERATEUR', id:2, selected: false},
+    {name:'Role_MEMBRE', id:2, selected: false}
+]
+selectedRoles: string[];
+  constructor(private userservice:UserserviceService,public fb : FormBuilder) { }
   ngOnInit(): void {
-  }
+    this.registrationForm = new FormGroup({
+      userName: new FormControl(null, [Validators.required, Validators.minLength(5), Validators.maxLength(20)]),
+      email: new FormControl(null, [Validators.required, Validators.email]),
+      password: new FormControl(null, [Validators.required, Validators.minLength(8)]),
+      telephone:new FormControl(null, [Validators.required, Validators.minLength(8)]),
+      roleSelection: this.createRoles(this.roles)
+  });
+}
+createRoles(rolesList): FormArray{
+  const arr = rolesList.map(role => {
+  return new FormControl(role.selected)
+  });
+  return new FormArray(arr);
+}
+
+
+
+
   onSubmit(){
     this.submitted = true;
     this.user.userName = this.registrationForm.value.userName;
 this.user.email=this.registrationForm.value.email;
 this.user.password=this.registrationForm.value.password;
 this.user.telephone= this.registrationForm.value.telephone;
-this.user.roles = this.Roles
+   this.user.roles = this.rolemembre;
+   console.log(this.user.roles)
 this.registerUser()
 }
 
@@ -46,15 +67,25 @@ registerUser(){
 
 
 
-
-
+getSelectedRoles():string[]  {
+  this.selectedRoles = this.registrationForm.value.roleSelection.map((selected, i) => {
+    if(selected){
+      return this.roles[i].name;
+    }else {
+      return '';
+    }
+  });
+  // return selected roles
+  return this.selectedRoles.filter(function (element) {
+    if (element !== '') {
+      return element;
+    }
+  });
 }
 
 
 
-
-
-
+}
 
 
 
