@@ -13,7 +13,12 @@ import { SinginComponent } from './singin/singin.component';
 import { SponsordetailsComponent } from './sponsordetails/sponsordetails.component';
 import { ListeuserComponent } from './listeuser/listeuser.component';
 import { UpdateuserComponent } from './updateuser/updateuser.component';
+import { EvenementAjoutComponent } from './evenement-ajout/evenement-ajout.component';
+import { EvenementListComponent } from './evenement-list/evenement-list.component';
+import { EvenementupdateComponent } from './evenementupdate/evenementupdate.component';
+import { EvenementdetailsComponent } from './evenementdetails/evenementdetails.component';
 import { ImgNavigationComponent } from './img-navigation/img-navigation.component';
+
 
 const routes: Routes = [
   {path:'signup',component:SingupComponent},
