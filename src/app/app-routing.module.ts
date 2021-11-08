@@ -30,11 +30,6 @@ const routes: Routes = [
   {path:'listsponsor',component:SponsorListComponent},
   {path:'updatesponsor',component:SponsorupdateComponent},
   {path:'sponsordetails',component:SponsordetailsComponent},
-<<<<<<< HEAD
-=======
-
-
->>>>>>> clubfeatures
 ];
 
 @NgModule({
