@@ -24,12 +24,6 @@ const routes: Routes = [
   {path:'listuser',component:ListeuserComponent},
   {path:'updateuser',component:UpdateuserComponent},
   {path:'userdetails',component:DetailsuserComponent},
-
-
-
-
-
-
 ];
 
 @NgModule({
