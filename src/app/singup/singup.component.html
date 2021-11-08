@@ -118,7 +118,7 @@
                   <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit" [disabled]="registrationForm.invalid" href="../../index.html">SIGN UP</button>
                 </div>
                 <div class="text-center mt-4 font-weight-light">
-                  Already have an account? <a href="login.html" class="text-primary">Login</a>
+                  Already have an account? <a routerLink="/singin" class="text-primary">Login</a>
                 </div>
                 <div class="alert alert-warning" *ngIf="submitted && !isRegistered">
                   Signup failed- {{ errorMessage }}

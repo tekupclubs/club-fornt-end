@@ -66,18 +66,24 @@
                 {{user.telephone}}
               </td>
               <td>
-                {{user.roles}}
+                {{role}}
               </td>
               <td>
-                <button type="button" (click)="updateuser(user.id)" class="btn btn-secondary btn-rounded btn-fw">Update</button>
-                <button type="button"  (click)="userd(user.id)"  class="btn btn-success btn-rounded btn-fw">Details</button>
+                <button type="button" [routerLink]="['../updateuser',user.id]"  class="btn btn-secondary btn-rounded btn-fw">Update</button>
+                <button type="button" [routerLink]="['../userdetails',user.id]"   class="btn btn-success btn-rounded btn-fw">Details</button>
+                <button type="button" [routerLink]="['../clubajout',user.id]"   class="btn btn-success btn-rounded btn-fw">Add club</button>
                 <button type="button" (click)="deleteuser(user.id)" class="btn btn-danger btn-rounded btn-fw">Delete</button>
             </td>
             </tr>
           </tbody>
         </table>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <div>
-          <button type="button" class="btn btn-info" (click)="adduser()"    >Add Sponsor</button>
+          <button type="button" class="btn btn-info" routerLink="../adduser">Add Sponsor</button>
         </div>
       </div>
     </div>
