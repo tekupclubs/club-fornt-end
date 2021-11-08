@@ -19,6 +19,7 @@ import { EvenementupdateComponent } from './evenementupdate/evenementupdate.comp
 import { EvenementdetailsComponent } from './evenementdetails/evenementdetails.component';
 import { ImgNavigationComponent } from './img-navigation/img-navigation.component';
 
+
 const routes: Routes = [
   {path:'signup',component:SingupComponent},
   {path:'singin',component:SinginComponent},
