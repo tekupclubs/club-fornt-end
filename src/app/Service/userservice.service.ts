@@ -16,11 +16,11 @@ export class UserserviceService {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
 
-  createsuser(user:user): Observable<Object> {
+  createsuser(user:user): Observable<any> {
     return this.http.post(`${this.baseUrl}`, user);
   }
 
-  updateuser(id: number, value: any): Observable<Object> {
+  updateuser(id: number, value: any): Observable<any> {
     return this.http.put(`${this.baseUrl}/${id}`, value);
   }
 

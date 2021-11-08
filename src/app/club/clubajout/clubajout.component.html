@@ -1,0 +1,61 @@
+<div class="container">
+  <form class="form-horizontal shadow p-3 mb-5 bg-white rounded " #f="ngForm" (ngSubmit)="f.form.valid && addclub(libelle,Activite,email,clubimage)"
+          >
+          <div class="row">
+                  <div class="col-6">
+                          <div class="form-group">
+                                  <input type="text" class="form-control" placeholder="Libelle" #libelle
+                                          ngModel name="libelle">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" class="form-control" placeholder=" Club Activite " #Activite
+                                    ngModel name="Activite">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder=" Club email " #email
+                              ngModel name="email">
+              </div>
+                          <div class="form-group">
+                                  <input type="file" class="form-control" placeholder="Evenment Picture" #clubimage
+                                          accept="image/*" name="image"
+                                          (change)="handleFileInput($any($event).target.files)">
+                          </div>
+                  </div>
+                  <div class="col-6">
+                          <h4 class="text-center">Image preview</h4>
+                          <img [src]="noimageurl" style="width:400px;height: 300px;">
+
+                  </div>
+
+          </div>
+          <div class="row">
+                  <div class="col-6">
+                          <input type="submit" class=" btn btn-primary" value="Add Club">
+                  </div>
+          </div>
+  </form>
+  <hr>
+  <div class="row">
+          <div class="col-3 align-left" *ngFor="let ev of Clubs">
+                  <div class="card shadow p-3 mb-5 bg-white rounded">
+                          <div class="card-body">
+                                  <h5 class="card-title">{{ev.libelle}}</h5>
+                                  <img src ="data:image/png;base64,{{ev.clubimage}}" class="img-responsive"
+                                          height="150px" width="200px" alt="Image">
+                                 <p class="card-text"> {{ev.Activite}}</p>
+                                  <p class="card-text"> {{ev.email}}</p>
+                                  <div class="row">
+                                    <div class="col-6">
+                                            <button class="btn btn-secondary" [routerLink]="['../updateclub',ev.idclub]">Edit</button>
+                                    </div>
+                                    <div class="col-6">
+                                            <button class="btn btn-danger"
+                                                    (click)="delclub(ev.idclub)">Remove</button>
+                                    </div>
+                            </div>
+
+                          </div>
+                  </div>
+          </div>
+  </div>
+</div>

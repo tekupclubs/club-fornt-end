@@ -16,10 +16,18 @@ import { AjoutuserComponent } from './ajoutuser/ajoutuser.component';
 import { DeleteuserComponent } from './deleteuser/deleteuser.component';
 import { UpdateuserComponent } from './updateuser/updateuser.component';
 import { DetailsuserComponent } from './detailsuser/detailsuser.component';
+<<<<<<< HEAD
 import { EvenementAjoutComponent } from './evenement-ajout/evenement-ajout.component';
 import { EvenementListComponent } from './evenement-list/evenement-list.component';
 import { EvenementdetailsComponent } from './evenementdetails/evenementdetails.component';
 import { EvenementupdateComponent } from './evenementupdate/evenementupdate.component';
+=======
+import { ImgNavigationComponent } from './img-navigation/img-navigation.component';
+import { ClubajoutComponent } from './club/clubajout/clubajout.component';
+import { ClubdetailsComponent } from './club/clubdetails/clubdetails.component';
+import { ClubupdateComponent } from './club/clubupdate/clubupdate.component';
+import { ClublistComponent } from './club/clublist/clublist.component';
+>>>>>>> ef39a26ee93e2f4f42f5f51a2cfc89d39da47384
 
 @NgModule({
   declarations: [
@@ -36,10 +44,18 @@ import { EvenementupdateComponent } from './evenementupdate/evenementupdate.comp
     DeleteuserComponent,
     UpdateuserComponent,
     DetailsuserComponent,
+<<<<<<< HEAD
     EvenementAjoutComponent,
     EvenementListComponent,
     EvenementdetailsComponent,
     EvenementupdateComponent
+=======
+    ImgNavigationComponent,
+    ClubajoutComponent,
+    ClubdetailsComponent,
+    ClubupdateComponent,
+    ClublistComponent
+>>>>>>> ef39a26ee93e2f4f42f5f51a2cfc89d39da47384
   ],
   imports: [
     BrowserModule,
