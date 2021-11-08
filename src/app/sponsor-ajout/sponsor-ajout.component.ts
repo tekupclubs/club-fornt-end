@@ -16,7 +16,6 @@ export class SponsorAjoutComponent implements OnInit {
   submitted = false;
   errorMessage = '';
   constructor(private sponsorService: SponsorService) { }
-
   ngOnInit(): void {
   }
   onSubmit(){
@@ -39,6 +38,4 @@ registerUser(){
         this.isRegistered = false;
     });
 }
-
-
 }

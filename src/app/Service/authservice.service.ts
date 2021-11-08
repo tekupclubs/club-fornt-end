@@ -32,6 +32,7 @@ export class AuthserviceService {
           console.log("Token---  " + tokenStr);
           sessionStorage.setItem("token", tokenStr);
           sessionStorage.setItem("roles", JSON.stringify(userData.roles));
+          sessionStorage.setItem("userid",JSON.stringify(userData.id))
           return userData;
         })
       );

@@ -27,7 +27,7 @@ export class SinginComponent implements OnInit {
     this.authService.login(this.loginForm.value.userName, this.loginForm.value.password).subscribe(
         data=>{
             this.isLoggedin = true
-            this.router.navigate(['/dashbord']);
+            this.router.navigate(['/dashbord/navimg']);
         },
         error=>{
             console.log(error);

@@ -16,6 +16,11 @@ import { AjoutuserComponent } from './ajoutuser/ajoutuser.component';
 import { DeleteuserComponent } from './deleteuser/deleteuser.component';
 import { UpdateuserComponent } from './updateuser/updateuser.component';
 import { DetailsuserComponent } from './detailsuser/detailsuser.component';
+import { ImgNavigationComponent } from './img-navigation/img-navigation.component';
+import { ClubajoutComponent } from './club/clubajout/clubajout.component';
+import { ClubdetailsComponent } from './club/clubdetails/clubdetails.component';
+import { ClubupdateComponent } from './club/clubupdate/clubupdate.component';
+import { ClublistComponent } from './club/clublist/clublist.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +36,12 @@ import { DetailsuserComponent } from './detailsuser/detailsuser.component';
     AjoutuserComponent,
     DeleteuserComponent,
     UpdateuserComponent,
-    DetailsuserComponent
+    DetailsuserComponent,
+    ImgNavigationComponent,
+    ClubajoutComponent,
+    ClubdetailsComponent,
+    ClubupdateComponent,
+    ClublistComponent
   ],
   imports: [
     BrowserModule,
