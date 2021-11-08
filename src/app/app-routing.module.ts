@@ -13,15 +13,12 @@ import { SinginComponent } from './singin/singin.component';
 import { SponsordetailsComponent } from './sponsordetails/sponsordetails.component';
 import { ListeuserComponent } from './listeuser/listeuser.component';
 import { UpdateuserComponent } from './updateuser/updateuser.component';
-<<<<<<< HEAD
 import { EvenementAjoutComponent } from './evenement-ajout/evenement-ajout.component';
 import { EvenementListComponent } from './evenement-list/evenement-list.component';
 import { EvenementupdateComponent } from './evenementupdate/evenementupdate.component';
 import { EvenementdetailsComponent } from './evenementdetails/evenementdetails.component';
 import { ImgNavigationComponent } from './img-navigation/img-navigation.component';
-=======
-import { ImgNavigationComponent } from './img-navigation/img-navigation.component';
->>>>>>> ef39a26ee93e2f4f42f5f51a2cfc89d39da47384
+
 
 const routes: Routes = [
   {path:'signup',component:SingupComponent},
@@ -38,15 +35,6 @@ const routes: Routes = [
   {path:'listsponsor',component:SponsorListComponent},
   {path:'updatesponsor',component:SponsorupdateComponent},
   {path:'sponsordetails',component:SponsordetailsComponent},
-<<<<<<< HEAD
-
-
-
-
-
-
-=======
->>>>>>> ef39a26ee93e2f4f42f5f51a2cfc89d39da47384
 ];
 
 @NgModule({
