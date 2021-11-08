@@ -42,22 +42,15 @@ import { ClublistComponent } from './club/clublist/clublist.component';
     DeleteuserComponent,
     UpdateuserComponent,
     DetailsuserComponent,
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
     EvenementAjoutComponent,
     EvenementListComponent,
     EvenementdetailsComponent,
-    EvenementupdateComponent
-=======
+    EvenementupdateComponent,
     ImgNavigationComponent,
     ClubajoutComponent,
     ClubdetailsComponent,
     ClubupdateComponent,
     ClublistComponent
->>>>>>> ef39a26ee93e2f4f42f5f51a2cfc89d39da47384
->>>>>>> master
   ],
   imports: [
     BrowserModule,
