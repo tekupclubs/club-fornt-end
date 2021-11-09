@@ -14,10 +14,10 @@ import { SponsordetailsComponent } from './sponsordetails/sponsordetails.compone
 import { ListeuserComponent } from './listeuser/listeuser.component';
 import { UpdateuserComponent } from './updateuser/updateuser.component';
 import { EvenementAjoutComponent } from './evenement-ajout/evenement-ajout.component';
-import { EvenementListComponent } from './evenement-list/evenement-list.component';
-import { EvenementupdateComponent } from './evenementupdate/evenementupdate.component';
-import { EvenementdetailsComponent } from './evenementdetails/evenementdetails.component';
+
 import { ImgNavigationComponent } from './img-navigation/img-navigation.component';
+import { EvenementupdateComponent } from './evenementupdate/evenementupdate.component';
+import { CreateclubComponent } from './createclub/createclub.component';
 
 
 const routes: Routes = [
@@ -35,6 +35,14 @@ const routes: Routes = [
   {path:'listsponsor',component:SponsorListComponent},
   {path:'updatesponsor',component:SponsorupdateComponent},
   {path:'sponsordetails',component:SponsordetailsComponent},
+  {path:'evenementajout',component:EvenementAjoutComponent},
+  {path:'updateevenement',component:EvenementupdateComponent},
+  {path:'updateevenement',component:EvenementupdateComponent},
+  {path:'createclub',component:CreateclubComponent},
+  
+
+
+
 ];
 
 @NgModule({

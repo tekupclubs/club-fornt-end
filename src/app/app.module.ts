@@ -17,14 +17,16 @@ import { DeleteuserComponent } from './deleteuser/deleteuser.component';
 import { UpdateuserComponent } from './updateuser/updateuser.component';
 import { DetailsuserComponent } from './detailsuser/detailsuser.component';
 import { EvenementAjoutComponent } from './evenement-ajout/evenement-ajout.component';
-import { EvenementListComponent } from './evenement-list/evenement-list.component';
-import { EvenementdetailsComponent } from './evenementdetails/evenementdetails.component';
-import { EvenementupdateComponent } from './evenementupdate/evenementupdate.component';
+
 import { ImgNavigationComponent } from './img-navigation/img-navigation.component';
 import { ClubajoutComponent } from './club/clubajout/clubajout.component';
 import { ClubdetailsComponent } from './club/clubdetails/clubdetails.component';
 import { ClubupdateComponent } from './club/clubupdate/clubupdate.component';
 import { ClublistComponent } from './club/clublist/clublist.component';
+import { EvenementdetailsComponent } from './evenementdetails/evenementdetails.component';
+import { EvenementupdateComponent } from './evenementupdate/evenementupdate.component';
+import { EvenementlistComponent } from './evenementlist/evenementlist.component';
+import { CreateclubComponent } from './createclub/createclub.component';
 
 
 @NgModule({
@@ -43,14 +45,16 @@ import { ClublistComponent } from './club/clublist/clublist.component';
     UpdateuserComponent,
     DetailsuserComponent,
     EvenementAjoutComponent,
-    EvenementListComponent,
-    EvenementdetailsComponent,
-    EvenementupdateComponent,
+
     ImgNavigationComponent,
     ClubajoutComponent,
     ClubdetailsComponent,
     ClubupdateComponent,
-    ClublistComponent
+    ClublistComponent,
+    EvenementdetailsComponent,
+    EvenementupdateComponent,
+    EvenementlistComponent,
+    CreateclubComponent
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,13 @@ export const environment = {
   viewclubUrl : "/api/getclub",
   updateclubUrl : "/api/updateclub",
   deleteclubUrl: "/api/delclub",
-  clublisturl:"/api/getclubs"
+  clublisturl:"/api/getclubs",
+  addToevenementUrl : "/api/addevenement",
+  viewevenementUrl : "/api/getevenement",
+  updateevenementUrl : "/api/updateevenement",
+  deleteevenementUrl: "/api/delevenement",
+  evenementlisturl:"/api/getevenements"
+  
 
 
 

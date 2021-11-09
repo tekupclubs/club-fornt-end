@@ -2,7 +2,7 @@ export class evenement{
     id :number;
     Libelle :string ;
     Nbre_de_places : number;
-    Durée :number ;
+    Duree :number ;
     Localisation : string;
   
   
@@ -10,9 +10,9 @@ export class evenement{
     Libelle:string ,
     Nbre_de_places: number ,
     Localisation: string ,
-      Durée:number){
+      Duree:number){
   this.Libelle=Libelle;
-  this.Durée=Durée;
+  this.Duree=Duree;
   this.Nbre_de_places= Nbre_de_places;
   this.Localisation=Localisation
   

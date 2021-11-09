@@ -1,1 +1,66 @@
-<p>evenement-ajout works!</p>
+<div class="container">
+    <form class="form-horizontal shadow p-3 mb-5 bg-white rounded " #f="ngForm" (ngSubmit)="f.form.valid && addevenement(Libelle,Nbre_de_places,Localisation,Duree,evenementimage)"
+            >
+            <div class="row">
+                    <div class="col-6">
+                            <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Libelle" #Libelle
+                                            ngModel name="Libelle">
+                            </div>
+                            <div class="form-group">
+                              <input type="text" class="form-control" placeholder=" Place Available " #Nbre_de_places
+                                      ngModel name="Activite">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder=" Localisation " #Localisation
+                                ngModel name="Localisation">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder=" Durée " #Duree
+                            ngModel name="Durée">
+            </div>
+                            <div class="form-group">
+                                    <input type="file" class="form-control" placeholder="Evenement Picture" #evenementimage
+                                            accept="image/*" name="image"
+                                            (change)="handleFileInput($any($event).target.files)">
+                            </div>
+                    </div>
+                    <div class="col-6">
+                            <h4 class="text-center">Image preview</h4>
+                            <img [src]="noimageurl" style="width:400px;height: 300px;">
+  
+                    </div>
+  
+            </div>
+            <div class="row">
+                    <div class="col-6">
+                            <input type="submit" class=" btn btn-primary" value="Add Event">
+                    </div>
+            </div>
+    </form>
+    <hr>
+    <div class="row">
+            <div class="col-3 align-left" *ngFor="let ev of Evenements">
+                    <div class="card shadow p-3 mb-5 bg-white rounded">
+                            <div class="card-body">
+                                    <h5 class="card-title">{{ev.Libelle}}</h5>
+                                    <img src ="data:image/png;base64,{{ev.evenementimage}}" class="img-responsive"
+                                            height="150px" width="200px" alt="Image">
+                                   <p class="card-text"> {{ev.Nbre_de_places}}</p>
+                                    <p class="card-text"> {{ev.Localisation}}</p>
+                                    <div class="row">
+                                      <div class="col-6">
+                                              <button class="btn btn-secondary" [routerLink]="['../updateevenement',ev.idevenement]">Edit</button>
+                                      </div>
+                                      <div class="col-6">
+                                              <button class="btn btn-danger"
+                                                      (click)="delevenement(ev.idevenement)">Remove</button>
+                                      </div>
+                              </div>
+  
+                            </div>
+                    </div>
+            </div>
+    </div>
+  </div>
+  

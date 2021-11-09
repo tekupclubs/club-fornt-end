@@ -1,7 +1,8 @@
-import { EvenementService } from './../Service/evenement.service';
-import { evenement } from './../models/evenement.modeles';
+import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Evenement } from '../models/Evenement';
+import { EvenementService } from '../Service/evenement.service';
 
 @Component({
   selector: 'app-evenementupdate',
@@ -9,36 +10,66 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
   styleUrls: ['./evenementupdate.component.css']
 })
 export class EvenementupdateComponent implements OnInit {
-id:number;
-evenement:evenement;
-  constructor(private route: ActivatedRoute,private router: Router,private evenementservice:EvenementService) { }
 
-  ngOnInit(): void {
-    this.evenement = new evenement('',0,'',0);
-
-    this.id = this.route.snapshot.params['id'];
-
-    this.evenementservice.getevenement(this.id)
-      .subscribe(data => {
-        console.log(data)
-        this.evenement = data;
-      }, error => console.log(error));
+  evenement : Evenement ={
+    idevenement:null,
+    Libelle : null,
+    Nbre_de_places: null,
+    Localisation:null,
+    Duree:null,
+    evenementimage:null
   }
-  updatesevenement() {
-    this.evenementservice.updatesevenement(this.id,this.evenement)
-      .subscribe(data => {
-        console.log(data);
-        this.evenement = new evenement('',0,'',0);
-        this.gotoList();
-      }, error => console.log(error));
+  evenements : Evenement[]=[];
+  fileToUpload : File=null ;
+  idevenement:string;
+  noimageurl="/assets/images/noimage.png"
+  
+  
+  
+    constructor(private route : ActivatedRoute,private router : Router,private evenementservice :EvenementService) {
+  
+  this.evenementservice.getevenements().subscribe(res=>{
+  
+  res.oblist.array.forEach(evenementdb => {
+    if(evenementdb.idevenement == this.idevenement){
+  this.evenement = evenementdb;
+  this.fileToUpload = evenementdb.evenementimage;
+    }
+  });
+  });
   }
-
-  onSubmit() {
-    this.updatesevenement();
-  }
-
-  gotoList() {
-    this.router.navigate(['/listevenement']);
-  }
+  
+    ngOnInit(): void {
+  this.idevenement = this.route.snapshot.paramMap.get('idevenement');
+    }
+    handleFileInput(file: FileList) {
+      this.fileToUpload = file.item(0);
+      var reader = new FileReader();
+      reader.onload = (event: any) => {
+        this.noimageurl = event.target.result;
+      }
+      reader.readAsDataURL(this.fileToUpload);
+    }
+    updateevenement(Libelle:any,Nbre_de_places:any,Localisation:any,Duree:any,evenementimage:any){
+  
+      this.evenementservice.updateevenement(Libelle.value,Nbre_de_places.value,Localisation.value,evenementimage.value,this.fileToUpload,this.idevenement).subscribe(res=>{
+      this.router.navigate(["../evenementajout"]);
+  
+      });
+      }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
 }
