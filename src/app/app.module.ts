@@ -21,6 +21,11 @@ import { ClubajoutComponent } from './club/clubajout/clubajout.component';
 import { ClubdetailsComponent } from './club/clubdetails/clubdetails.component';
 import { ClubupdateComponent } from './club/clubupdate/clubupdate.component';
 import { ClublistComponent } from './club/clublist/clublist.component';
+import { AjoutfournisseurComponent } from './fournisseur/ajoutfournisseur/ajoutfournisseur.component';
+import { DetailsfournisseurComponent } from './fournisseur/detailsfournisseur/detailsfournisseur.component';
+import { UpdatefournisseurComponent } from './fournisseur/updatefournisseur/updatefournisseur.component';
+import { DeletefournisseurComponent } from './fournisseur/listfournisseur/deletefournisseur.component';
+import { ListfournisseurComponent } from './fourniseur/listfournisseur/listfournisseur.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +46,12 @@ import { ClublistComponent } from './club/clublist/clublist.component';
     ClubajoutComponent,
     ClubdetailsComponent,
     ClubupdateComponent,
-    ClublistComponent
+    ClublistComponent,
+    AjoutfournisseurComponent,
+    DetailsfournisseurComponent,
+    UpdatefournisseurComponent,
+    DeletefournisseurComponent,
+    ListfournisseurComponent
   ],
   imports: [
     BrowserModule,

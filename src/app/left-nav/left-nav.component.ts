@@ -8,20 +8,15 @@ import { DatePipe } from '@angular/common'
   styleUrls: ['./left-nav.component.css']
 })
 export class LeftNavComponent implements OnInit {
-
   userName: string;
   userRoles: string;
-
- datetime :Date;
+  datetime :Date;
   constructor(private authservice : AuthserviceService) { }
-
   ngOnInit(): void {
-
   this.userName = sessionStorage.getItem("username");
   this.userRoles = sessionStorage.getItem("roles");
   this.datetime= new Date();
-
-  }
+}
 
   getUserName(){
     return sessionStorage.getItem("username");
