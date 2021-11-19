@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { ClubService } from './../../Service/club.service';
 import { Component, OnInit } from '@angular/core';
 import { Club } from 'src/app/models/Club';
@@ -16,7 +16,7 @@ showAdd:boolean =false;
 auth:string;
 iduser:string = null;
 
-  constructor(private route : ActivatedRoute,private clubservice : ClubService) { }
+  constructor(private route : ActivatedRoute,private clubservice : ClubService,private router :Router) { }
 noimageurl="/assets/images/noimage.png"
   ngOnInit(): void {
 this.clubservice.getclubs().subscribe(
@@ -36,7 +36,11 @@ this.iduser = this.route.snapshot.paramMap.get('id');
   }
 addclub(libelle:any,Activite:any,email:any,clubimage:any){
 this.clubservice.addclub(libelle.value,Activite.value,email.value,this.iduser,this.fileToUpload).subscribe(res=>{
+<<<<<<< HEAD
 
+=======
+this.Clubs= res.oblist;
+>>>>>>> clubfeatures
 });
 }
 delclub(idclub11:any){
@@ -45,6 +49,15 @@ this.Clubs = res.oblist;
 this.ngOnInit();
 });}
 
+navigatetoupdateclub(idclub:any){
+  let navigationExtras: NavigationExtras = {
+    queryParams: {
+      "clubparam": idclub.value
+    }
+  };
+  console.log(idclub);
+  this.router.navigate(["updateclub"], navigationExtras);
+}
 
 show() {
   this.showAdd = true;
@@ -52,6 +65,9 @@ show() {
 hide(): void {
   this.showAdd = false;
 }
+}
+
+
 
 //function show1() {
 
@@ -71,5 +87,3 @@ hide(): void {
 
 
 
-
-}

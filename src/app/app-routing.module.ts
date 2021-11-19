@@ -30,11 +30,16 @@ const routes: Routes = [
   {path:'updateuser/:id',component:UpdateuserComponent},
   {path:'userdetails/:id',component:DetailsuserComponent},
   {path:'clubajout/:id',component:ClubajoutComponent},
-  {path:'updateclub',component:ClubupdateComponent}]},
+ ]},
+ {path:'updateclub/:id',component:ClubupdateComponent},
   {path:'addsponsor',component:SponsorAjoutComponent},
   {path:'listsponsor',component:SponsorListComponent},
   {path:'updatesponsor',component:SponsorupdateComponent},
+<<<<<<< HEAD
   {path:'sponsordetails',component:SponsordetailsComponent},
+=======
+  {path:'sponsordetails',component:SponsordetailsComponent}
+>>>>>>> clubfeatures
 ];
 
 @NgModule({
